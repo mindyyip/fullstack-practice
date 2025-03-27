@@ -1,7 +1,17 @@
 
 document.addEventListener("keypress", function(event){
     playSound(event.key);
+    flashAnimation(event.key);
 });
+
+function flashAnimation(key)
+{
+    document.querySelector("." + key).classList.add("pressed");
+    setTimeout(function(){
+        document.querySelector("." + key).classList.remove("pressed")
+    }, 100);
+}
+
 function playSound(key)
 {
     console.log(key);
